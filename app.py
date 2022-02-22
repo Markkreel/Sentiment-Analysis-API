@@ -16,9 +16,9 @@ vec_path = 'lib/models/TFIDFVectorizer.pkl'
 with open(vec_path, 'rb') as f:
     model.vectorizer = pickle.load(f)
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def post_result():
-    query = request.form.get('query')
+    query = request.args.get('query')
      # vectorize the user's query and make a prediction
     uq_vectorized = model.vectorizer_transform(np.array(['that movie was boring']))
     prediction = model.predict(uq_vectorized)
