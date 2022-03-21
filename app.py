@@ -1,7 +1,7 @@
 from model import NLPModel
 import numpy as np
 import pickle
-8from flask import Flask, request
+from flask import Flask, request
 
 app = Flask(__name__)
 # api = Api(app)
