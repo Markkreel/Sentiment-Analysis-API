@@ -55,13 +55,6 @@ def analyze_sentiment_route():
             "model": "SentimentClassifier",
             "version": "1.0",
         }
-
-        return {
-            "query": query,
-            "result": result,
-            "model": "SentimentClassifier",
-            "version": "1.0",
-        }
     except Exception as e:
         return {"error": str(e)}, 500
 
