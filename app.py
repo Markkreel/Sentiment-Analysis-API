@@ -55,7 +55,9 @@ def analyze_sentiment_route():
             "model": "SentimentClassifier",
             "version": "1.0",
         }
-    except Exception as e:
+    except ValueError as e:
+        return {"error": str(e)}, 400
+    except (RuntimeError, pickle.PickleError) as e:
         return {"error": str(e)}, 500
 
 
