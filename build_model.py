@@ -1,9 +1,29 @@
+"""
+This module handles the building and training of a sentiment analysis model.
+It includes functionality for data loading, preprocessing, model training,
+and evaluation using ROC curves.
+"""
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from model import NLPModel
 
 
 def build_model():
+    """
+    Builds and trains a sentiment analysis model using NLP techniques.
+
+    This function:
+    1. Loads training data from a TSV file
+    2. Preprocesses the data for binary sentiment classification
+    3. Fits and transforms the text data using vectorization
+    4. Trains a classifier model
+    5. Saves the trained model and vectorizer
+    6. Plots the ROC curve for model evaluation
+
+    Returns:
+        None
+    """
     model = NLPModel()
 
     # filename = os.path.join(
