@@ -21,19 +21,19 @@ def build_model():
     model.vectorizer_fit(pos_neg.loc[:, "Phrase"])
     print("Vectorizer fit complete")
 
-    X = model.vectorizer_transform(pos_neg.loc[:, "Phrase"])
+    x = model.vectorizer_transform(pos_neg.loc[:, "Phrase"])
     print("Vectorizer transform complete")
     y = pos_neg.loc[:, "Binary"]
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y)
+    x_train, x_test, y_train, y_test = train_test_split(x, y)
 
-    model.train(X_train, y_train)
+    model.train(x_train, y_train)
     print("Model training complete")
 
     model.pickle_clf()
     model.pickle_vectorizer()
 
-    model.plot_roc(X_test, y_test, size_x=10, size_y=6)
+    model.plot_roc(x_test, y_test, size_x=10, size_y=6)
 
 
 if __name__ == "__main__":
