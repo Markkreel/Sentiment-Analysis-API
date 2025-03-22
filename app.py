@@ -1,7 +1,7 @@
-from model import NLPModel
-import numpy as np
 import pickle
+import numpy as np
 from flask import Flask, request
+from model import NLPModel
 
 app = Flask(__name__)
 # api = Api(app)
