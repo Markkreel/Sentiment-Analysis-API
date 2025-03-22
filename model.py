@@ -1,11 +1,11 @@
+# from sklearn.ensemble import RandomForestClassifier
+import pickle
+
 # ML imports
 from sklearn.naive_bayes import MultinomialNB
 
 # from sklearn.naive_bayes import BernoulliNB
 from sklearn.feature_extraction.text import TfidfVectorizer
-
-# from sklearn.ensemble import RandomForestClassifier
-import pickle
 
 from util import plot_roc
 
