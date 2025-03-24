@@ -1,4 +1,10 @@
-# import spacys
+"""Utility functions for sentiment analysis and model evaluation.
+
+This module provides helper functions for text processing using spaCy
+and visualization tools for model evaluation including ROC curve plotting.
+"""
+
+# import spacy
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 
