@@ -24,28 +24,28 @@ class NLPModel(object):
         # self.vectorizer = TfidfVectorizer(tokenizer=spacy_tok)
         self.vectorizer = TfidfVectorizer()
 
-    def vectorizer_fit(self, X):
+    def vectorizer_fit(self, x):
         """Fits a TFIDF vectorizer to the text"""
-        self.vectorizer.fit(X)
+        self.vectorizer.fit(x)
 
-    def vectorizer_transform(self, X):
+    def vectorizer_transform(self, x):
         """Transform the text data to a sparse TFIDF matrix"""
-        X_transformed = self.vectorizer.transform(X)
+        X_transformed = self.vectorizer.transform(x)
         return X_transformed
 
-    def train(self, X, y):
+    def train(self, x, y):
         """Trains the classifier to associate the label with the sparse matrix"""
         # X_train, X_test, y_train, y_test = train_test_split(X, y)
-        self.clf.fit(X, y)
+        self.clf.fit(x, y)
 
-    def predict_proba(self, X):
+    def predict_proba(self, x):
         """Returns probability for the binary class '1' in a numpy array"""
-        y_proba = self.clf.predict_proba(X)
+        y_proba = self.clf.predict_proba(x)
         return y_proba[:, 1]
 
-    def predict(self, X):
+    def predict(self, x):
         """Returns the predicted class in an array"""
-        y_pred = self.clf.predict(X)
+        y_pred = self.clf.predict(x)
         return y_pred
 
     def pickle_vectorizer(self, path="chalicelib/models/TFIDFVectorizer.pkl"):
@@ -60,6 +60,6 @@ class NLPModel(object):
             pickle.dump(self.clf, f)
             print(f"Pickled classifier at {path}")
 
-    def plot_roc(self, X, y, size_x, size_y):
+    def plot_roc(self, x, y, size_x, size_y):
         """Plot the ROC curve for X_test and y_test."""
-        plot_roc(self.clf, X, y, size_x, size_y)
+        plot_roc(self.clf, x, y, size_x, size_y)
