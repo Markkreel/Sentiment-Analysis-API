@@ -27,14 +27,14 @@ def plot_roc(model, x_columns, y_true, size_x=12, size_y=12):
 
     # method I: plt
     fig, ax = plt.subplots(figsize=(size_x, size_y))
-    model_name = str(type(model)).split('.')[-1].strip(">\'")
-    plt.title(f'{model_name} ROC')
-    ax.plot(fpr, tpr, 'k', label='AUC = %0.3f' % area_under_curve)
+    model_name = str(type(model)).split(".")[-1].strip(">'")
+    plt.title(f"{model_name} ROC")
+    ax.plot(fpr, tpr, "k", label=f"AUC = {area_under_curve:.3f}")
 
-    ax.legend(loc='lower right')
-    ax.plot([0, 1], [0, 1], 'r--')
+    ax.legend(loc="lower right")
+    ax.plot([0, 1], [0, 1], "r--")
     plt.xlim([0, 1])
     plt.ylim([0, 1])
-    plt.ylabel('True Positive Rate')
-    plt.xlabel('False Positive Rate')
+    plt.ylabel("True Positive Rate")
+    plt.xlabel("False Positive Rate")
     plt.show()
