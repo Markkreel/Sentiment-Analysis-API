@@ -30,8 +30,8 @@ class NLPModel(object):
 
     def vectorizer_transform(self, x):
         """Transform the text data to a sparse TFIDF matrix"""
-        X_transformed = self.vectorizer.transform(x)
-        return X_transformed
+        x_transformed = self.vectorizer.transform(x)
+        return x_transformed
 
     def train(self, x, y):
         """Trains the classifier to associate the label with the sparse matrix"""
