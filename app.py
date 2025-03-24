@@ -1,3 +1,11 @@
+"""
+Sentiment Analysis API
+
+This module provides a Flask-based REST API for sentiment analysis of text.
+It uses a trained machine learning model to classify text as positive or negative,
+providing sentiment predictions with confidence scores.
+"""
+
 import pickle
 import numpy as np
 from flask import Flask, request
@@ -10,11 +18,12 @@ app = Flask(__name__)
 class Config:
     """
     Configuration class storing file paths for the sentiment analysis model.
-    
+
     Attributes:
         CLF_PATH (str): Path to the serialized sentiment classifier model
         VEC_PATH (str): Path to the serialized TF-IDF vectorizer
     """
+
     CLF_PATH = "lib/models/SentimentClassifier.pkl"
     VEC_PATH = "lib/models/TFIDFVectorizer.pkl"
 
@@ -65,11 +74,11 @@ def analyze_sentiment(text):
 def analyze_sentiment_route():
     """
     Flask route handler for sentiment analysis endpoint.
-    
+
     Returns:
         dict: JSON response containing sentiment analysis results or error message
         int: HTTP status code
-    
+
     Query Parameters:
         query (str): Text to analyze for sentiment
     """
