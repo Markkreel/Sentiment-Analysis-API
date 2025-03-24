@@ -52,13 +52,13 @@ class NLPModel(object):
         """Saves the trained vectorizer for future use."""
         with open(path, "wb") as f:
             pickle.dump(self.vectorizer, f)
-            print("Pickled vectorizer at {}".format(path))
+            print(f"Pickled vectorizer at {path}")
 
     def pickle_clf(self, path="chalicelib/models/SentimentClassifier.pkl"):
         """Saves the trained classifier for future use."""
         with open(path, "wb") as f:
             pickle.dump(self.clf, f)
-            print("Pickled classifier at {}".format(path))
+            print(f"Pickled classifier at {path}")
 
     def plot_roc(self, X, y, size_x, size_y):
         """Plot the ROC curve for X_test and y_test."""
