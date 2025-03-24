@@ -41,6 +41,16 @@ def analyze_sentiment(text):
 
 @app.route("/analyze")
 def analyze_sentiment_route():
+    """
+    Flask route handler for sentiment analysis endpoint.
+    
+    Returns:
+        dict: JSON response containing sentiment analysis results or error message
+        int: HTTP status code
+    
+    Query Parameters:
+        query (str): Text to analyze for sentiment
+    """
     query = request.args.get("query")
 
     if not query:
