@@ -27,7 +27,7 @@ def plot_roc(model, x_columns, y_true, size_x=12, size_y=12):
 
     # method I: plt
     fig, ax = plt.subplots(figsize=(size_x, size_y))
-    model_name = str(type(model)).split(".")[-1].strip(">'")
+    model_name = str(type(model)).rsplit(".", maxsplit=1)[-1].strip(">'")
     plt.title(f"{model_name} ROC")
     ax.plot(fpr, tpr, "k", label=f"AUC = {area_under_curve:.3f}")
 
