@@ -1,3 +1,6 @@
+"""RandomForestClassifier is an optional classifier that can be used
+as an alternative to MultinomialNB for sentiment analysis."""
+
 # from sklearn.ensemble import RandomForestClassifier
 import pickle
 
