@@ -8,6 +8,13 @@ app = Flask(__name__)
 
 
 class Config:
+    """
+    Configuration class storing file paths for the sentiment analysis model.
+    
+    Attributes:
+        CLF_PATH (str): Path to the serialized sentiment classifier model
+        VEC_PATH (str): Path to the serialized TF-IDF vectorizer
+    """
     CLF_PATH = "lib/models/SentimentClassifier.pkl"
     VEC_PATH = "lib/models/TFIDFVectorizer.pkl"
 
