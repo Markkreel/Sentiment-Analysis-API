@@ -26,6 +26,21 @@ except Exception as e:
 
 
 def analyze_sentiment(text):
+    """
+    Analyzes the sentiment of the provided text using the trained model.
+
+    Args:
+        text (str): The text to analyze for sentiment.
+
+    Returns:
+        dict: A dictionary containing:
+            - prediction (str): Either "Positive" or "Negative"
+            - confidence (str): Confidence score formatted to 3 decimal places
+
+    Raises:
+        ValueError: If text is empty or less than 3 characters
+        RuntimeError: If there are issues with model prediction
+    """
     if not text or len(text.strip()) < 3:
         raise ValueError("Query must be at least 3 characters")
 
