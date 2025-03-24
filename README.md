@@ -14,11 +14,14 @@ A machine learning API for analyzing sentiment in text phrases using Natural Lan
 
 1. Clone repository
 2. Create virtual environment:
+
    ```bash
    python -m venv venv
    venv\Scripts\activate
    ```
+
 3. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -32,7 +35,7 @@ A machine learning API for analyzing sentiment in text phrases using Natural Lan
 
 ## Project Structure
 
-```
+```json
 ├── app.py              # Flask API endpoints
 ├── build_model.py      # Model training script
 ├── model.py            # NLP model class definition
@@ -44,10 +47,13 @@ A machine learning API for analyzing sentiment in text phrases using Natural Lan
 ## Usage
 
 1. Train the model:
+
    ```bash
    python build_model.py
    ```
+
 2. Start the API:
+
    ```bash
    flask run
    ```
@@ -59,10 +65,13 @@ GET `/sentiment`
 - Parameters:
   - `sentence`: Text phrase to analyze
 - Example:
-  ```
+
+  ```bash
   http://localhost:5000/sentiment?sentence="I really enjoy this product"
   ```
+
 - Response:
+
   ```json
   {
     "sentence": "I really enjoy this product",
