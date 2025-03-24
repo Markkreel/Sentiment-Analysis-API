@@ -13,6 +13,11 @@ from util import plot_roc
 
 
 class NLPModel(object):
+    """Natural Language Processing Model for sentiment analysis.
+
+    A class that implements text vectorization and classification for sentiment analysis
+    using scikit-learn's MultinomialNB classifier and TfidfVectorizer.
+    """
 
     def __init__(self):
         """Simple NLP
